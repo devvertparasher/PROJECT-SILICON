@@ -2,9 +2,9 @@
 
 ## Description
 
-A synchronous 4-bit up counter written in Verilog.
+A parameterized synchronous up counter written in Verilog, with a default width of 4 bits.
 
-The counter updates on every positive edge of the clock. When reset is
+The counter updates on every positive edge of the clock. When rst is
 asserted, the counter returns to `0`. Otherwise, the counter increments
 by `1` on each clock cycle.
 
@@ -19,7 +19,7 @@ The counter follows:
 
 `0 → 1 → 2 → 3 → ... → 14 → 15 → 0 → ...`
 
-Since the counter is 4 bits wide, incrementing `15` produces a
+Since the default counter width is 4 bits, incrementing `15` produces a
 wrap-around to `0`.
 
 ## Interface
@@ -28,5 +28,5 @@ wrap-around to `0`.
 |--------|-----------|-------|-------------|
 | `clk` | Input | 1 bit | Clock signal |
 | `rst` | Input | 1 bit | Active-high synchronous reset |
-| `count` | Output | 4 bits | Current counter value |
+| `count` | Output | `WIDTH` bits | Current counter value |
 
