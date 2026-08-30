@@ -27,6 +27,6 @@ wrap-around to `0`.
 | Signal | Direction | Width | Description |
 |--------|-----------|-------|-------------|
 | `clk` | Input | 1 bit | Clock signal |
-| `reset` | Input | 1 bit | Active-high synchronous reset |
+| `rst` | Input | 1 bit | Active-high synchronous reset |
 | `count` | Output | 4 bits | Current counter value |
 
