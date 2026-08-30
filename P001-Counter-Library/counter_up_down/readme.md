@@ -18,7 +18,28 @@ The counter increments or decrements based on the `up_down` control signal while
 - Down Counting
 - Counter Hold Mode
 
----
+# Interface & Behavior
+
+| Signal | Direction | Width | Description |
+|--------|-----------|-------|-------------|
+| `clk` | Input | 1 bit | Clock signal |
+| `reset` | Input | 1 bit | Active-high synchronous reset |
+| `enable` | Input | 1 bit | Enables counting |
+| `up_down` | Input | 1 bit | `1` = count up, `0` = count down |
+| `count` | Output | 4 bits | Current counter value |
+
+### Operation
+
+- `reset = 1` → `count = 0`
+- `reset = 0`, `enable = 0` → counter holds its value
+- `reset = 0`, `enable = 1`, `up_down = 1` → counter increments
+- `reset = 0`, `enable = 1`, `up_down = 0` → counter decrements
+
+The counter wraps around because it is 4 bits wide:
+
+`15 → 0` when counting up
+
+`0 → 15` when counting down**
 
 ## Files
 
