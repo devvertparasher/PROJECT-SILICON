@@ -26,9 +26,9 @@ A synchronous 4-bit down counter written in Verilog.
 
 ## Files
 
-- rtl.v
-- tb.v
-- counter_down.vcd
-- counter_down_netlist.v
-- architecture.md
-- interview.md
+- `rtl.v` — RTL implementation
+- `tb.v` — Verification testbench
+- `netlist.v` — Yosys-generated synthesized netlist
+- `architecture.md` — Design architecture
+- `gtkwave.png` — Simulation waveform
+- `yosys.png` — Synthesis evidence
